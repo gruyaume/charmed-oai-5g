@@ -27,6 +27,7 @@ Deploy the charms:
 juju deploy mysql-k8s --channel=edge --trust
 juju deploy oai-5g-nrf --channel=edge --trust
 juju deploy oai-5g-udr --channel=edge --trust
+juju deploy oai-5g-udm --channel=edge --trust
 ```
 
 Relate the charms:
@@ -34,4 +35,6 @@ Relate the charms:
 ```bash
 juju relate mysql-k8s oai-5g-udr
 juju relate oai-5g-nrf oai-5g-udr
+juju relate oai-5g-nrf oai-5g-udm
+juju relate oai-5g-udr oai-5g-udm
 ```
