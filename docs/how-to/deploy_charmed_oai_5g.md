@@ -1,6 +1,8 @@
-# Deploy Charmed OAI 5G
+# Deploy the 5G Core
 
 ## Requirements
+
+The 5G Core must be installed on a Kubernetes cluster with the following specifications:
 
 - **:material-kubernetes: Kubernetes**: A cluster with a total of a minimum of 6 vCPUs and 16 GB of RAM.
 - **:material-ubuntu: Juju**: A Juju controller with access to the Kubernetes cluster
@@ -13,9 +15,11 @@ Install microk8s with the necessary add-ons:
 snap install microk8s --classic
 microk8s enable dns
 microk8s enable storage
+microk8s enable community
+microk8s enable multus
 ```
 
-## Install the OAI 5G Core 
+## Deploy the 5G Core
 
 Deploy the charms:
 
