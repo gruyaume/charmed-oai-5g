@@ -9,7 +9,7 @@ The 5G Core must be installed on a Kubernetes cluster with the following specifi
 
 ## Getting Started
 
-Install microk8s with the necessary add-ons:
+Install MicroK8s with the necessary add-ons:
 
 ```bash
 snap install microk8s --classic
