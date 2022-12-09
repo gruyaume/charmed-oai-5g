@@ -1,9 +1,19 @@
 # Deploy Charmed OAI 5G
 
+```mermaid
+flowchart TD;
+      udr((UDR))-->mysql((MySQL))
+      udr((UDR))-->nrf((NRF))
+      udm((UDM))-->nrf((NRF))
+      udm((UDM))-->nrf((NRF))
+      ausf((AUSF))-->nrf((NRF))
+      ausf((AUSF))-->udm((UDM))
+```
+
 ## Requirements
 
-- **:material-kubernetes: Kubernetes**: A cluster with a total of a minimum of 6 vCPUs and 16 GB of RAM.
-- **:material-ubuntu: Juju**: A Juju controller with access to the Kubernetes cluster
+- **Kubernetes**: A cluster with a total of a minimum of 6 vCPUs and 16 GB of RAM.
+- **Juju**: A Juju controller with access to the Kubernetes cluster
 
 ## Getting Started
 
@@ -17,7 +27,7 @@ microk8s enable storage
 
 ## Install the OAI 5G Core 
 
-Install microk8s with the necessary add-ons:
+Install MicroK8s with the necessary add-ons:
 
 ```bash
 snap install microk8s --classic
