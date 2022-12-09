@@ -1,15 +1,5 @@
 # Deploy Charmed OAI 5G
 
-```mermaid
-flowchart TD;
-      udr((UDR))-->mysql((MySQL))
-      udr((UDR))-->nrf((NRF))
-      udm((UDM))-->nrf((NRF))
-      udm((UDM))-->nrf((NRF))
-      ausf((AUSF))-->nrf((NRF))
-      ausf((AUSF))-->udm((UDM))
-```
-
 ## Requirements
 
 - **Kubernetes**: A cluster with a total of a minimum of 6 vCPUs and 16 GB of RAM.
@@ -58,4 +48,16 @@ juju relate oai-5g-nrf oai-5g-udm
 juju relate oai-5g-udr oai-5g-udm
 juju relate oai-5g-ausf oai-5g-udm
 juju relate oai-5g-ausf oai-5g-nrf
+```
+
+## Reference
+
+```mermaid
+flowchart TD;
+      udr((UDR))-->mysql((MySQL))
+      udr((UDR))-->nrf((NRF))
+      udm((UDM))-->nrf((NRF))
+      udm((UDM))-->nrf((NRF))
+      ausf((AUSF))-->nrf((NRF))
+      ausf((AUSF))-->udm((UDM))
 ```
