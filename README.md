@@ -37,6 +37,7 @@ juju deploy oai-5g-nrf --channel=edge --trust
 juju deploy oai-5g-udr --channel=edge --trust
 juju deploy oai-5g-udm --channel=edge --trust
 juju deploy oai-5g-ausf --channel=edge --trust
+juju deploy oai-5g-amf --channel=edge --trust
 ```
 
 Relate the charms:
@@ -48,6 +49,10 @@ juju relate oai-5g-nrf oai-5g-udm
 juju relate oai-5g-udr oai-5g-udm
 juju relate oai-5g-ausf oai-5g-udm
 juju relate oai-5g-ausf oai-5g-nrf
+juju relate oai-5g-amf mysql-k8s
+juju relate oai-5g-amf oai-5g-nrf
+juju relate oai-5g-amf oai-5g-udm
+juju relate oai-5g-amf oai-5g-ausf
 ```
 
 ## Reference
@@ -60,4 +65,8 @@ flowchart TD;
       udm((UDM))-->nrf((NRF))
       ausf((AUSF))-->nrf((NRF))
       ausf((AUSF))-->udm((UDM))
+      amf((AMF))-->mysql((MySQL))
+      amf((AMF))-->nrf((NRF))
+      amf((AMF))-->udm((UDM))
+      amf((AMF))-->ausf((AUSF))
 ```
