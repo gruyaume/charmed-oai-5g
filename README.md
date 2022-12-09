@@ -60,4 +60,8 @@ flowchart TD;
       udm((UDM))-->nrf((NRF))
       ausf((AUSF))-->nrf((NRF))
       ausf((AUSF))-->udm((UDM))
+      amf((AMF))-->mysql((MySQL))
+      amf((AMF))-->nrf((NRF))
+      amf((AMF))-->udm((UDM))
+      amf((AMF))-->ausf((AUSF))
 ```
