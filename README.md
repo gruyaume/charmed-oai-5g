@@ -38,6 +38,7 @@ juju deploy oai-5g-udr --channel=edge --trust
 juju deploy oai-5g-udm --channel=edge --trust
 juju deploy oai-5g-ausf --channel=edge --trust
 juju deploy oai-5g-amf --channel=edge --trust
+juju deploy oai-5g-upf --channel=edge --trust
 ```
 
 Relate the charms:
@@ -69,4 +70,5 @@ flowchart TD;
       amf((AMF))-->nrf((NRF))
       amf((AMF))-->udm((UDM))
       amf((AMF))-->ausf((AUSF))
+      upf((UPF))
 ```
