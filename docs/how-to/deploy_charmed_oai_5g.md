@@ -30,6 +30,7 @@ juju deploy oai-5g-udr --channel=edge --trust
 juju deploy oai-5g-udm --channel=edge --trust
 juju deploy oai-5g-ausf --channel=edge --trust
 juju deploy oai-5g-amf --channel=edge --trust
+juju deploy oai-5g-upf --channel=edge --trust
 ```
 
 Relate the charms:
@@ -45,4 +46,5 @@ juju relate oai-5g-amf mysql-k8s
 juju relate oai-5g-amf oai-5g-nrf
 juju relate oai-5g-amf oai-5g-udm
 juju relate oai-5g-amf oai-5g-ausf
+juju relate oai-5g-upf oai-5g-nrf
 ```
