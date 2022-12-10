@@ -2,17 +2,21 @@
 
 ```mermaid
 flowchart TD;
-      udr((UDR))-->mysql((MySQL))
       udr((UDR))-->nrf((NRF))
       udm((UDM))-->nrf((NRF))
-      udm((UDM))-->nrf((NRF))
       ausf((AUSF))-->nrf((NRF))
-      ausf((AUSF))-->udm((UDM))
-      amf((AMF))-->mysql((MySQL))
       amf((AMF))-->nrf((NRF))
-      amf((AMF))-->udm((UDM))
+      udr((UDR))-->mysql((MySQL))
+      udm((UDM))-->udr((UDR))
+      ausf((AUSF))-->udm((UDM))
       amf((AMF))-->ausf((AUSF))
+      amf((AMF))-->udm((UDM))
+      amf((AMF))-->mysql((MySQL))
       upf((UPF))-->nrf((NRF))
+      smf((SMF))-->nrf((NRF))
+      smf((SMF))-->amf((AMF))
+      smf((SMF))-->udm((UDM))
+      smf((SMF))-->upf((UPF))
 ```
 
 ## Charmhub links
@@ -23,3 +27,4 @@ flowchart TD;
 - [oai-5g-udm](https://charmhub.io/oai-5g-udm)
 - [oai-5g-udr](https://charmhub.io/oai-5g-udr)
 - [oai-5g-upf](https://charmhub.io/oai-5g-upf)
+- [oai-5g-smf](https://charmhub.io/oai-5g-smf)

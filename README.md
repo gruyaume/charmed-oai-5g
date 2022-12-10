@@ -7,7 +7,7 @@
 
 ## Getting Started
 
-Install microk8s with the necessary add-ons:
+Install MicroK8s with the necessary add-ons:
 
 ```bash
 snap install microk8s --classic
@@ -39,6 +39,7 @@ juju deploy oai-5g-udm --channel=edge --trust
 juju deploy oai-5g-ausf --channel=edge --trust
 juju deploy oai-5g-amf --channel=edge --trust
 juju deploy oai-5g-upf --channel=edge --trust
+juju deploy oai-5g-smf --channel=edge --trust
 ```
 
 Relate the charms:
@@ -54,21 +55,40 @@ juju relate oai-5g-amf mysql-k8s
 juju relate oai-5g-amf oai-5g-nrf
 juju relate oai-5g-amf oai-5g-udm
 juju relate oai-5g-amf oai-5g-ausf
+juju relate oai-5g-upf oai-5g-nrf
+juju relate oai-5g-smf oai-5g-nrf
+juju relate oai-5g-smf oai-5g-amf
+juju relate oai-5g-smf oai-5g-udm
+juju relate oai-5g-smf oai-5g-upf
 ```
 
 ## Reference
 
 ```mermaid
 flowchart TD;
-      udr((UDR))-->mysql((MySQL))
       udr((UDR))-->nrf((NRF))
       udm((UDM))-->nrf((NRF))
-      udm((UDM))-->nrf((NRF))
       ausf((AUSF))-->nrf((NRF))
-      ausf((AUSF))-->udm((UDM))
-      amf((AMF))-->mysql((MySQL))
       amf((AMF))-->nrf((NRF))
-      amf((AMF))-->udm((UDM))
+      udr((UDR))-->mysql((MySQL))
+      udm((UDM))-->udr((UDR))
+      ausf((AUSF))-->udm((UDM))
       amf((AMF))-->ausf((AUSF))
-      upf((UPF))
+      amf((AMF))-->udm((UDM))
+      amf((AMF))-->mysql((MySQL))
+      upf((UPF))-->nrf((NRF))
+      smf((SMF))-->nrf((NRF))
+      smf((SMF))-->amf((AMF))
+      smf((SMF))-->udm((UDM))
+      smf((SMF))-->upf((UPF))
 ```
+
+## Charmhub links
+
+- [oai-5g-amf](https://charmhub.io/oai-5g-amf)
+- [oai-5g-ausf](https://charmhub.io/oai-5g-ausf)
+- [oai-5g-nrf](https://charmhub.io/oai-5g-nrf)
+- [oai-5g-udm](https://charmhub.io/oai-5g-udm)
+- [oai-5g-udr](https://charmhub.io/oai-5g-udr)
+- [oai-5g-upf](https://charmhub.io/oai-5g-upf)
+- [oai-5g-smf](https://charmhub.io/oai-5g-smf)
