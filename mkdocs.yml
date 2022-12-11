@@ -5,7 +5,8 @@ copyright: Guillaume Belanger
 nav:
     - "Home": "index.md"
     - "How-to Guides":
-        - "Deploy the 5G Core": 'how-to/deploy_charmed_oai_5g.md'
+        - "Deploy the 5G Core": 'how-to/deploy_charmed_oai_5g_core.md'
+        - "Deploy the 5G RAN": 'how-to/deploy_charmed_oai_5g_ran.md'
     - "Reference":
         - "Model": "reference/model.md"
 
